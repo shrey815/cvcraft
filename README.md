@@ -1,5 +1,6 @@
-# CVCraft: Job-Tailored CV Builder for Students
+** Live demo: [cvcraft-99k7.onrender.com](https://cvcraft-99k7.onrender.com)**
 
+> Hosted on Render's free plan: if the site has been idle, the first load can take up to a minute while it wakes up.
 A full stack web app that helps students build an organised, ATS-friendly CV and tailor it to a specific job profile.
 
 **Stack:** React 19 + Vite + Tailwind CSS v4 · Node.js + Express 5 · MongoDB Atlas (Mongoose) · Google Gemini API · JWT auth
