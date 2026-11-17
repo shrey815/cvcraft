@@ -1,0 +1,19 @@
+{
+  "name": "cvcraft",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Job-tailored CV builder for students (React + Express + MongoDB + Gemini)",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm install --prefix server --omit=dev && npm install --prefix client --include=dev && npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "test": "npm test --prefix server"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+# Render Blueprint: deploys the whole app (website + API) as ONE free web service.
+# Render dashboard → New → Blueprint → pick this repo. You'll be asked for the secrets marked sync: false.
+services:
+  - type: web
+    name: cvcraft
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: MONGO_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
